@@ -1,0 +1,531 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+    color: #222;
+}
+
+h2 {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* Cores Azuis do Cartão */
+/* Usei um azul escuro como primário e um mais claro para hover/destaque */
+:root {
+    --primary-blue: #0A3B69; /* Azul escuro do cartão */
+    --light-blue: #0D4E88; /* Um tom um pouco mais claro para destaque */
+    --dark-grey: #222;
+    --light-grey: #f2f2f2;
+    --white: #fff;
+}
+
+
+/* Cabeçalho */
+.header {
+    background-color: var(--dark-grey);
+    color: var(--white);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+/* CORREÇÃO DO ALINHAMENTO DA NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0;
+}
+
+.navbar ul li a {
+    color: var(--white);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: var(--primary-blue); /* Laranja substituído por azul */
+}
+
+.btn-cta {
+    background-color: var(--primary-blue); /* Laranja substituído por azul */
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-cta:hover {
+    background-color: var(--light-blue); /* Laranja substituído por azul mais claro */
+}
+
+.menu-toggle {
+    display: none; /* Esconde o botão de menu em telas grandes */
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+/* Seção Hero */
+.hero {
+    position: relative;
+    height: 70vh; /* Altura da viewport */
+    background: url('https://via.placeholder.com/1500x700?text=Armacoes+Metalicas+Gladyston') no-repeat center center/cover; /* Imagem de fundo ajustada */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.hero p {
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.hero .bible-verse { /* Novo estilo para o versículo bíblico */
+    font-size: 1.1em;
+    margin-top: 20px;
+    font-style: italic;
+    color: #f2f2f2;
+}
+
+/* Seções Gerais */
+.section {
+    padding: 80px 0;
+}
+
+.projetos-section {
+    background-color: var(--white);
+}
+
+.servicos-section {
+    background-color: var(--light-grey); /* Cinza claro para esta seção */
+    text-align: center;
+}
+
+.choose-contact-section {
+    background-color: var(--white);
+    padding-bottom: 0; /* Para o card de contato não ter padding inferior */
+}
+
+/* Grid Layout */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+/* Cards de Projeto */
+.projeto-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+}
+
+.projeto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.projeto-card h3 {
+    font-size: 1.3em;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Itens de Serviço */
+.servico-item {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.servico-item:hover {
+    transform: translateY(-5px);
+}
+
+.servico-item i {
+    font-size: 3em;
+    color: var(--primary-blue); /* Laranja substituído por azul */
+    margin-bottom: 20px;
+}
+
+.servico-item h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.servico-item p {
+    color: #666;
+}
+
+/* Seção Por que Escolher-nos / Contato */
+.flex-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start; /* Alinha o topo dos elementos */
+}
+
+.choose-us-content {
+    flex: 2; /* Ocupa mais espaço */
+    text-align: center;
+}
+
+.choose-us-content h2 {
+    text-align: center;
+}
+
+.reason-item {
+    padding: 20px;
+}
+
+.reason-item i {
+    font-size: 2.5em;
+    color: var(--primary-blue); /* Laranja substituído por azul */
+    margin-bottom: 15px;
+}
+
+.reason-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.contact-form-card {
+    flex: 1; /* Ocupa menos espaço */
+    background-color: var(--dark-grey);
+    color: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form-card h2 {
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: var(--white);
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #bbb;
+}
+
+.btn-submit {
+    background-color: var(--primary-blue); /* Laranja substituído por azul */
+    color: var(--white);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--light-blue); /* Laranja substituído por azul mais claro */
+}
+
+.map-placeholder {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background-color: #555;
+    height: 200px;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.contact-form-card .address,
+.contact-form-card .phone {
+    text-align: center;
+    margin-bottom: 5px;
+    color: #ccc;
+}
+.contact-form-card .phone i { /* Estilo para o ícone do WhatsApp no contato */
+    margin-right: 5px;
+}
+
+
+/* Rodapé */
+.footer {
+    background-color: var(--dark-grey);
+    color: var(--white);
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Para responsividade */
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5em;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-blue); /* Laranja substituído por azul */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 992px) {
+    .header .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .logo {
+        margin-bottom: 15px;
+    }
+    .navbar {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+    .navbar ul {
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    .navbar ul li {
+        margin: 0 10px;
+    }
+    .btn-cta {
+        margin-left: 0;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+    }
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .flex-container {
+        flex-direction: column; /* Pilha em telas menores */
+    }
+
+    .choose-us-content,
+    .contact-form-card {
+        flex: auto;
+        width: 100%;
+    }
+
+    .contact-form-card {
+        margin-top: 40px;
+    }
+
+    .footer .container {
+        flex-direction: column;
+    }
+    .footer p {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Esconde a navbar padrão */
+        flex-direction: column;
+        width: 100%;
+        background-color: #333; /* Fundo para o menu mobile */
+        position: absolute;
+        top: 60px; /* Ajuste conforme a altura do header */
+        left: 0;
+        padding: 20px 0;
+    }
+
+    .navbar.active {
+        display: flex; /* Mostra a navbar quando 'active' */
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .navbar ul li a, .btn-cta {
+        display: block;
+        padding: 10px 0;
+        width: 80%; /* Para centralizar melhor os itens do menu mobile */
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o botão de menu */
+        order: 2; /* Para aparecer depois do logo no cabeçalho */
+        position: absolute;
+        right: 20px;
+    }
+
+    .header .container {
+        justify-content: space-between; /* Ajusta para logo e botão de menu */
+    }
+    .logo {
+        margin-bottom: 0;
+    }
+
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero p {
+        font-size: 1em;
+    }
+    .hero .bible-verse {
+        font-size: 0.9em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .grid-3 {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 200px; /* Ajuste a altura conforme necessário */
+    width: auto ; /* Mantém a proporção */
+    max-width: 250px; /* Largura máxima */
+    object-fit: contain;
+}
+
+/* Para telas menores (opcional) */
+@media (max-width: 768px) {
+    .logo img {
+        height: 40px;
+        max-width: 200px;
+    }
+}
