@@ -1,161 +1,276 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+    <!-- ==== Metas essenciais ==== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GCASTRO ARMAÇÕES</title>
+    <title>GCASTRO ARMAÇÕES – Coberturas, Toldos, Portões e Telhados</title>
+    <meta name="description"
+          content="Armações metálicas, coberturas, toldos, portões e telhados em Contagem – Glaydston Castro. Qualidade, comprometimento e excelência.">
+    <meta name="theme-color" content="#161D22">
+    <link rel="canonical" href="https://gcastroarmacoes.cf/">
+
+    <!-- ==== Open Graph (para redes sociais) ==== -->
+    <meta property="og:title" content="GCASTRO ARMAÇÕES">
+    <meta property="og:description"
+          content="Armações metálicas, coberturas, toldos, portões e telhados em Contagem – Glaydston Castro.">
+    <meta property="og:url" content="https://gcastroarmacoes.cf/">
+    <meta property="og:image" content="https://gcastroarmacoes.cf/images/logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- ==== Favicon ==== -->
+    <link rel="icon" href="/favicon.png" type="image/png">
+
+    <!-- ==== Pré-conexões (melhor LCP) ==== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- ==== Fontes externas ====
+         Oswald  -> títulos (traço condensado, "estampado em metal")
+         Inter   -> texto corrido
+         IBM Plex Mono -> rótulos/etiquetas (efeito "código de série") -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ==== Seu CSS ==== -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
 
-    <header class="header">
+<a class="skip-link" href="#home">Pular para o conteúdo</a>
+
+<header class="header" id="site-header">
     <div class="container">
-        <div class="logo">
-            <img src="images/logo.png">
-        </div>
-        <nav class="navbar">
+        <!-- LOGO -->
+        <a href="#home" class="logo" aria-label="Ir para a página inicial">
+            <img src="images/logoGcastro.png" alt="Logotipo GCASTRO ARMAÇÕES" loading="lazy">
+        </a>
+
+        <!-- BOTÃO DO MENU MOBILE -->
+        <button class="menu-toggle"
+                aria-label="Abrir menu"
+                aria-controls="nav-primary"
+                aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- MENU DE NAVEGAÇÃO -->
+        <nav id="nav-primary" class="navbar" aria-label="Menu principal">
             <ul>
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#servicos">SERVIÇOS</a></li>
-                <li><a href="#sobre-nos">SOBRE NÓS</a></li>
+                <li><a href="#projetos">PROJETOS</a></li>
                 <li><a href="#contato">CONTATO</a></li>
             </ul>
-            <a href="#orcamento" class="btn-cta">ORÇAMENTO</a>
+            <a href="#contato" class="btn-cta">ORÇAMENTO</a>
         </nav>
-        <button class="menu-toggle" aria-label="Abrir menu">
-            <i class="fas fa-bars"></i>
-        </button>
     </div>
+    <div class="nav-backdrop" hidden></div>
 </header>
+
+<!-- ==== CONTEÚDO PRINCIPAL ==== -->
+<main>
+
+    <!-- HERO -->
     <section id="home" class="hero">
+        <div class="hero-texture" aria-hidden="true"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <h1>GCASTRO ARMAÇÕES</h1>
-            <p class="bible-verse">"Tudo posso naquele que me fortalece! Filipenses 4:13"</p>
+            <p class="eyebrow">Armações metálicas · Contagem, MG</p>
+            <h1>GCASTRO<br>ARMAÇÕES</h1>
+            <p class="hero-lead">Estrutura, proteção e acabamento em metal — coberturas, telhados,
+                toldos e portões feitos para durar.</p>
+            <div class="hero-actions">
+                <a href="#contato" class="btn btn-primary">Solicitar orçamento</a>
+                <a href="https://wa.me/5531986799018" class="btn btn-ghost" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
+                </a>
+            </div>
+            <p class="bible-verse">"Tudo posso naquele que me fortalece." — Filipenses 4:13</p>
+        </div>
+        <a href="#projetos" class="scroll-cue" aria-label="Rolar para os projetos">
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <div class="seam" aria-hidden="true"></div>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="section projetos-section">
+        <div class="container">
+            <p class="eyebrow eyebrow-center">Portfólio</p>
+            <h2>Nossos Projetos</h2>
+            <div class="grid-3">
+                <article class="projeto-card reveal">
+                    <div class="projeto-media">
+                        <img src="images/coberturas-com-toldo.png"
+                             alt="Cobertura residencial com toldo"
+                             loading="lazy">
+                    </div>
+                    <h3>Coberturas</h3>
+                </article>
+                <article class="projeto-card reveal">
+                    <div class="projeto-media">
+                        <img src="images/portao-moderno.png"
+                             alt="Portão de design moderno"
+                             loading="lazy">
+                    </div>
+                    <h3>Portões</h3>
+                </article>
+                <article class="projeto-card reveal">
+                    <div class="projeto-media">
+                        <img src="images/toldo-listrado.png"
+                             alt="Toldo listrado"
+                             loading="lazy">
+                    </div>
+                    <h3>Toldos</h3>
+                </article>
+            </div>
         </div>
     </section>
 
-   <section id="projetos" class="section projetos-section">
-    <div class="container">
-        <h2>NOSSOS PROJETOS</h2>
-        <div class="grid-3">
-            <div class="projeto-card">
-                <img src="images/coberturas com toldo.png" alt="Cobertura Residencial com Toldo">
-                <h3>COBERTURAS</h3>
-            </div>
-            <div class="projeto-card">
-                <img src="images/portão moderno.png" alt="Portão de Design Moderno">
-                <h3>PORTÕES</h3>
-            </div>
-            <div class="projeto-card">
-                <img src="images/toldo listrado.png" alt="Toldo Listrado">
-                <h3>TOLDOS</h3>
-            </div>
-        </div>
-    </div>
-</section>
+    <div class="seam seam-alt" aria-hidden="true"></div>
 
+    <!-- SERVIÇOS -->
     <section id="servicos" class="section servicos-section">
         <div class="container">
-            <h2>NOSSOS SERVIÇOS</h2>
-            <div class="grid-3">
-                <div class="servico-item">
-                    <i class="fas fa-umbrella-beach"></i> 
-                    <h3>COBERTURAS</h3>
+            <p class="eyebrow eyebrow-center">O que fazemos</p>
+            <h2>Nossos Serviços</h2>
+            <div class="grid-3 grid-5">
+                <div class="servico-item reveal">
+                    <i class="fa-solid fa-warehouse"></i>
+                    <h3>Coberturas</h3>
                     <p>Soluções duráveis para proteção.</p>
                 </div>
-                <div class="servico-item">
-                    <i class="fas fa-warehouse"></i> 
-                    <h3>TELHADOS</h3>
+                <div class="servico-item reveal">
+                    <i class="fa-solid fa-house"></i>
+                    <h3>Telhados</h3>
                     <p>Estruturas metálicas para telhados.</p>
                 </div>
-                <div class="servico-item">
-                    <i class="fas fa-door-closed"></i> 
-                    <h3>PORTÕES</h3>
+                <div class="servico-item reveal">
+                    <i class="fa-solid fa-door-closed"></i>
+                    <h3>Portões</h3>
                     <p>Portões de segurança e design.</p>
                 </div>
-                <div class="servico-item">
-                    <i class="fas fa-awning"></i> 
-                    <h3>TOLDOS</h3>
+                <div class="servico-item reveal">
+                    <i class="fa-solid fa-umbrella-beach"></i>
+                    <h3>Toldos</h3>
                     <p>Proteção solar e contra chuva.</p>
                 </div>
-                <div class="servico-item">
-                    <i class="fas fa-plus-circle"></i> 
-                    <h3>ENTRE OUTROS</h3>
+                <div class="servico-item reveal">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <h3>Outros</h3>
                     <p>Consulte-nos para outras soluções.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <div class="seam" aria-hidden="true"></div>
+
+    <!-- CONTATO / POR QUE ESCOLHER -->
     <section id="contato" class="section choose-contact-section">
         <div class="container flex-container">
+            <!-- Por que escolher -->
             <div class="choose-us-content">
-                <h2>POR QUE ESCOLHER GLAYDSTON CASTRO?</h2>
+                <p class="eyebrow">Por que a Gcastro</p>
+                <h2>Por que escolher Glaydston Castro?</h2>
                 <div class="grid-3">
-                    <div class="reason-item">
-                        <i class="fas fa-award"></i>
-                        <h3>QUALIDADE</h3>
+                    <div class="reason-item reveal">
+                        <i class="fa-solid fa-award"></i>
+                        <h3>Qualidade</h3>
                         <p>Trabalhamos com os melhores materiais.</p>
                     </div>
-                    <div class="reason-item">
-                        <i class="fas fa-handshake"></i>
-                        <h3>COMPROMETIMENTO</h3>
+                    <div class="reason-item reveal">
+                        <i class="fa-solid fa-handshake"></i>
+                        <h3>Comprometimento</h3>
                         <p>Dedicados a superar suas expectativas.</p>
                     </div>
-                    <div class="reason-item">
-                        <i class="fas fa-star"></i>
-                        <h3>EXCELÊNCIA</h3>
+                    <div class="reason-item reveal">
+                        <i class="fa-solid fa-star"></i>
+                        <h3>Excelência</h3>
                         <p>Acabamento impecável em cada projeto.</p>
                     </div>
                 </div>
             </div>
-            <div class="contact-form-card">
-                <h2>FALE CONOSCO</h2>
-                <form>
+
+            <!-- Formulário de contato -->
+            <div class="contact-form-card reveal">
+                <h2>Fale Conosco</h2>
+
+                <!-- *** Troque o action abaixo por seu endpoint (ex.: Formspree, Netlify Forms, etc.) *** -->
+                <form action="https://formspree.io/f/your-id" method="POST">
                     <div class="form-group">
+                        <label for="nome" class="sr-only">Nome</label>
                         <input type="text" id="nome" name="nome" placeholder="Nome" required>
                     </div>
+
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <label for="email" class="sr-only">E-mail</label>
+                        <input type="email" id="email" name="_replyto" placeholder="E-mail" required>
                     </div>
+
                     <div class="form-group">
+                        <label for="telefone" class="sr-only">Telefone</label>
                         <input type="tel" id="telefone" name="telefone" placeholder="Telefone">
                     </div>
+
                     <div class="form-group">
-                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Mensagem"></textarea>
+                        <label for="mensagem" class="sr-only">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5"
+                                  placeholder="Mensagem"></textarea>
                     </div>
-                    <button type="submit" class="btn-submit">ENVIAR</button>
+
+                    <button type="submit" class="btn-submit">Enviar mensagem</button>
                 </form>
+
+                <!-- MAPA (lazy-load) -->
                 <div class="map-placeholder">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.234567890123!2d-44.03!3d-19.93!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDU1JzQ4LjAiUyA0NMKwMDEnNDguMCJX!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr&q=Rua+A,+50+-+Inconfidentes,+Contagem+-+MG" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</div>
-                
-                <p class="address">Rua A, 50 - Inconfidentes, Contagem - MG</p>
-                
-                <p class="phone"><i class="fab fa-whatsapp"></i> (31) 9 8679-9018</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.234567890123!2d-44.03!3d-19.93!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDU1JzQ4LjAiUyA0NMKwMDEnNDguMCJX!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr"
+                            width="100%" height="200" style="border:0;" loading="lazy"
+                            title="Localização Gcastro Armações no mapa"
+                            allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <p class="address"><i class="fa-solid fa-location-dot"></i> Rua A, 50 – Inconfidentes, Contagem – MG</p>
+                <p class="phone"><i class="fa-brands fa-whatsapp"></i> (31) 9 8679-9018</p>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <p>© 2024 Glaydston Castro. Todos os direitos reservados.</p>
-            <div class="social-links">
-                <a href="https://wa.me/5531986799018" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                
-            </div>
+</main>
+
+<!-- ==== RODAPÉ ==== -->
+<footer class="footer">
+    <div class="seam seam-alt" aria-hidden="true"></div>
+    <div class="container">
+        <p>&copy; <span id="year">2024</span> Glaydston Castro. Todos os direitos reservados.</p>
+        <div class="social-links">
+            <a href="https://wa.me/5531986799018" target="_blank" rel="noopener" title="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <script>
-        // JS para o menu responsivo (exemplo simples)
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.navbar ul').classList.toggle('active');
-        });
-    </script>
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<a href="https://wa.me/5531986799018" class="whatsapp-float" target="_blank" rel="noopener"
+   aria-label="Chamar no WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- BOTÃO VOLTAR AO TOPO -->
+<button class="back-to-top" type="button" aria-label="Voltar ao topo" hidden>
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- ==== Seu JavaScript ==== -->
+<script src="script.js" defer></script>
 </body>
-
 </html>
