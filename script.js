@@ -11,7 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.navbar');
     const backdrop = document.querySelector('.nav-backdrop');
+    const navClose = document.querySelector('.nav-close');
     const toggleIcon = toggleBtn ? toggleBtn.querySelector('i') : null;
+
+    // Elementos que devem ficar "inertes" (sem clique/foco/rolagem) com o menu aberto.
+    // Deixamos de fora o próprio menu e o backdrop, que continuam interativos.
+    const inertTargets = [document.querySelector('main'), document.querySelector('.footer')]
+        .filter(Boolean);
+
+    const setSiteInert = (isInert) => {
+        inertTargets.forEach(el => {
+            if (isInert) {
+                el.setAttribute('inert', '');
+                el.setAttribute('aria-hidden', 'true');
+            } else {
+                el.removeAttribute('inert');
+                el.removeAttribute('aria-hidden');
+            }
+        });
+    };
 
     const closeMenu = () => {
         toggleBtn.setAttribute('aria-expanded', 'false');
@@ -22,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (backdrop) backdrop.classList.remove('active');
         if (backdrop) backdrop.hidden = true;
         document.body.style.overflow = '';
+        setSiteInert(false);
     };
 
     const openMenu = () => {
@@ -32,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nav.classList.add('active');
         if (backdrop) { backdrop.hidden = false; backdrop.classList.add('active'); }
         document.body.style.overflow = 'hidden';
+        setSiteInert(true);
     };
 
     if (toggleBtn && nav) {
@@ -47,6 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Fecha o menu ao clicar fora (backdrop)
         if (backdrop) backdrop.addEventListener('click', closeMenu);
+
+        // Fecha o menu ao clicar no botão X dentro do painel
+        if (navClose) navClose.addEventListener('click', closeMenu);
 
         // Fecha o menu com a tecla Esc
         document.addEventListener('keydown', (e) => {
