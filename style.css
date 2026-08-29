@@ -56,6 +56,7 @@ body {
     color: var(--ink);
     background-color: var(--white);
 }
+html, body { overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
@@ -162,6 +163,7 @@ textarea:focus-visible {
 }
 .navbar ul li a:hover,
 .navbar ul li a:focus-visible { color: var(--white); border-color: var(--amber); }
+.navbar ul li a.is-active { color: var(--white); border-color: var(--amber); }
 
 .btn-cta {
     background-color: var(--amber);
@@ -183,7 +185,17 @@ textarea:focus-visible {
     color: var(--white);
     font-size: 1.6rem;
     cursor: pointer;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color .25s var(--ease), transform .25s var(--ease);
 }
+.menu-toggle:active { transform: scale(.9); background: rgba(255,255,255,.08); }
+.menu-toggle i { transition: transform .3s var(--ease); }
+.menu-toggle.is-open i { transform: rotate(90deg); }
 
 .nav-backdrop {
     position: fixed;
@@ -483,6 +495,22 @@ textarea:focus-visible {
     transition: transform .25s var(--ease);
 }
 .whatsapp-float:hover { transform: scale(1.08); }
+.whatsapp-float:active { transform: scale(.94); }
+
+/* =========================================================
+   10.1  FEEDBACK DE TOQUE (mobile) — retorno imediato ao tocar
+   ========================================================= */
+.btn, .btn-cta, .btn-submit, .projeto-card, .servico-item,
+.whatsapp-float, .back-to-top, .menu-toggle {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+.btn:active,
+.btn-cta:active,
+.btn-submit:active { transform: scale(.97); }
+.projeto-card:active,
+.servico-item:active { transform: translateY(-2px) scale(.99); }
+.back-to-top:active { transform: scale(.9); }
 
 .back-to-top {
     position: fixed;
@@ -545,15 +573,46 @@ textarea:focus-visible {
         gap: 40px;
         padding: 40px 32px;
         transform: translateX(100%);
-        transition: transform .35s var(--ease);
+        transition: transform .35s var(--ease), visibility .35s var(--ease);
         z-index: 950;
+        /* Esconde de verdade quando fechado: evita que o arraste lateral
+           revele o menu e impede que ele gere rolagem horizontal na página */
+        visibility: hidden;
+        pointer-events: none;
     }
-    .navbar.active { transform: translateX(0); display: flex; }
-    .navbar ul { flex-direction: column; gap: 22px; }
-    .navbar ul li a { font-size: 1rem; }
-    .btn-cta { width: 100%; text-align: center; }
+    .navbar.active {
+        transform: translateX(0);
+        display: flex;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    .navbar ul { flex-direction: column; gap: 8px; width: 100%; }
+    .navbar ul li { width: 100%; }
+    .navbar ul li a {
+        display: block;
+        font-size: 1.05rem;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .navbar ul li a.is-active { border-bottom-color: var(--amber); }
+    .btn-cta { width: 100%; text-align: center; padding: 14px 22px; margin-top: 8px; }
 
-    .menu-toggle { display: block; }
+    /* Entrada escalonada dos itens quando o menu abre */
+    .navbar ul li,
+    .navbar .btn-cta {
+        opacity: 0;
+        transform: translateX(24px);
+        transition: opacity .35s var(--ease), transform .35s var(--ease);
+    }
+    .navbar.active ul li,
+    .navbar.active .btn-cta { opacity: 1; transform: translateX(0); }
+    .navbar.active ul li:nth-child(1) { transition-delay: .08s; }
+    .navbar.active ul li:nth-child(2) { transition-delay: .14s; }
+    .navbar.active ul li:nth-child(3) { transition-delay: .20s; }
+    .navbar.active ul li:nth-child(4) { transition-delay: .26s; }
+    .navbar.active .btn-cta { transition-delay: .32s; }
+
+    .menu-toggle { display: flex; }
 
     .hero { padding: 120px 0 70px; min-height: 80vh; }
     .hero-actions { flex-direction: column; align-items: stretch; }
