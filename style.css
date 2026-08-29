@@ -178,9 +178,11 @@ textarea:focus-visible {
 }
 .btn-cta:hover { background-color: var(--white); transform: translateY(-2px); }
 
+.nav-close { display: none; }
+
 .menu-toggle {
-    display: none;
-    background: none;
+  display: none;
+  background: none;
     border: none;
     color: var(--white);
     font-size: 1.6rem;
