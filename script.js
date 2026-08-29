@@ -11,10 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.navbar');
     const backdrop = document.querySelector('.nav-backdrop');
+    const toggleIcon = toggleBtn ? toggleBtn.querySelector('i') : null;
 
     const closeMenu = () => {
         toggleBtn.setAttribute('aria-expanded', 'false');
         toggleBtn.setAttribute('aria-label', 'Abrir menu');
+        toggleBtn.classList.remove('is-open');
+        if (toggleIcon) toggleIcon.className = 'fa-solid fa-bars';
         nav.classList.remove('active');
         if (backdrop) backdrop.classList.remove('active');
         if (backdrop) backdrop.hidden = true;
@@ -24,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const openMenu = () => {
         toggleBtn.setAttribute('aria-expanded', 'true');
         toggleBtn.setAttribute('aria-label', 'Fechar menu');
+        toggleBtn.classList.add('is-open');
+        if (toggleIcon) toggleIcon.className = 'fa-solid fa-xmark';
         nav.classList.add('active');
         if (backdrop) { backdrop.hidden = false; backdrop.classList.add('active'); }
         document.body.style.overflow = 'hidden';
@@ -98,7 +103,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* -----------------------------------------------------
-       5) ANO DINÂMICO NO RODAPÉ
+       5) SCROLL-SPY — destaca a seção ativa no menu
+       ----------------------------------------------------- */
+    const navLinks = Array.from(document.querySelectorAll('.navbar ul li a'));
+    const sections = navLinks
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+    if (sections.length && 'IntersectionObserver' in window) {
+        const spy = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.toggle(
+                            'is-active',
+                            link.getAttribute('href') === `#${id}`
+                        );
+                    });
+                }
+            });
+        }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+        sections.forEach(section => spy.observe(section));
+    }
+
+    /* -----------------------------------------------------
+       6) ANO DINÂMICO NO RODAPÉ
        ----------------------------------------------------- */
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
