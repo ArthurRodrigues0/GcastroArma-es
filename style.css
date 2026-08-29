@@ -56,6 +56,7 @@ body {
     color: var(--ink);
     background-color: var(--white);
 }
+html, body { overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
@@ -572,10 +573,19 @@ textarea:focus-visible {
         gap: 40px;
         padding: 40px 32px;
         transform: translateX(100%);
-        transition: transform .35s var(--ease);
+        transition: transform .35s var(--ease), visibility .35s var(--ease);
         z-index: 950;
+        /* Esconde de verdade quando fechado: evita que o arraste lateral
+           revele o menu e impede que ele gere rolagem horizontal na página */
+        visibility: hidden;
+        pointer-events: none;
     }
-    .navbar.active { transform: translateX(0); display: flex; }
+    .navbar.active {
+        transform: translateX(0);
+        display: flex;
+        visibility: visible;
+        pointer-events: auto;
+    }
     .navbar ul { flex-direction: column; gap: 8px; width: 100%; }
     .navbar ul li { width: 100%; }
     .navbar ul li a {
