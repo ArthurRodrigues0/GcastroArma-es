@@ -31,6 +31,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // Guarda a posição de rolagem para travar/destravar o fundo no mobile.
+    let savedScrollY = 0;
+
+    // Trava a rolagem do fundo fixando o body na posição atual.
+    // (overflow:hidden sozinho não impede o toque de arrastar a página no celular)
+    const lockScroll = () => {
+        savedScrollY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${savedScrollY}px`;
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
+    };
+
+    const unlockScroll = () => {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, savedScrollY);
+    };
+
     const closeMenu = () => {
         toggleBtn.setAttribute('aria-expanded', 'false');
         toggleBtn.setAttribute('aria-label', 'Abrir menu');
@@ -39,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nav.classList.remove('active');
         if (backdrop) backdrop.classList.remove('active');
         if (backdrop) backdrop.hidden = true;
-        document.body.style.overflow = '';
+        unlockScroll();
         setSiteInert(false);
     };
 
@@ -50,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (toggleIcon) toggleIcon.className = 'fa-solid fa-xmark';
         nav.classList.add('active');
         if (backdrop) { backdrop.hidden = false; backdrop.classList.add('active'); }
-        document.body.style.overflow = 'hidden';
+        lockScroll();
         setSiteInert(true);
     };
 
