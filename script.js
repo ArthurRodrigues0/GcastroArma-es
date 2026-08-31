@@ -177,7 +177,55 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* -----------------------------------------------------
-       6) ANO DINÂMICO NO RODAPÉ
+       6) FORMULÁRIO DE CONTATO — envio via AJAX + feedback
+       ----------------------------------------------------- */
+    const contactForm = document.getElementById('contact-form');
+    const formFeedback = document.getElementById('form-feedback');
+
+    if (contactForm && formFeedback) {
+        const submitBtn = contactForm.querySelector('.btn-submit');
+        const defaultBtnText = submitBtn ? submitBtn.textContent : 'Enviar mensagem';
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Enviando...';
+            }
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { Accept: 'application/json' },
+                });
+
+                if (response.ok) {
+                    // Esconde o formulário e mostra a mensagem personalizada
+                    contactForm.hidden = true;
+                    formFeedback.hidden = false;
+                    formFeedback.classList.add('is-visible');
+                    formFeedback.scrollIntoView({
+                        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+                        block: 'center',
+                    });
+                    contactForm.reset();
+                } else {
+                    throw new Error('Falha no envio');
+                }
+            } catch (err) {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = defaultBtnText;
+                }
+                alert('Não foi possível enviar sua mensagem agora. Tente novamente ou chame no WhatsApp (31) 9 8679-9018.');
+            }
+        });
+    }
+
+    /* -----------------------------------------------------
+       7) ANO DINÂMICO NO RODAPÉ
        ----------------------------------------------------- */
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
