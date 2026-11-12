@@ -8,7 +8,7 @@
     <title>Serralheria em Contagem/MG – Coberturas, Portões, Toldos e Telhados | GCASTRO</title>
     <meta name="description"
           content="Serralheria em Contagem/MG: coberturas em policarbonato, estruturas metálicas para telhados, portões e toldos sob medida. Orçamento pelo WhatsApp (31) 98679-9018.">
-    <meta name="theme-color" content="#161D22">
+    <meta name="theme-color" content="#1C2830">
     <!-- Ao ligar um domínio próprio na Vercel, troque a URL abaixo (canonical, og:url, og:image e JSON-LD) -->
     <link rel="canonical" href="https://gcastro-arma-es.vercel.app/">
 
@@ -33,7 +33,7 @@
       "alternateName": "Glaydston Castro Armações",
       "url": "https://gcastro-arma-es.vercel.app/",
       "image": "https://gcastro-arma-es.vercel.app/images/og-image.jpg",
-      "logo": "https://gcastro-arma-es.vercel.app/images/logo.png",
+      "logo": "https://gcastro-arma-es.vercel.app/favicon.png",
       "telephone": "+55-31-98679-9018",
       "address": {
         "@type": "PostalAddress",
@@ -54,18 +54,21 @@
     </script>
 
     <!-- ==== Favicon ==== -->
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="icon" href="./favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <link rel="preload" as="image" href="images/hero-obra.webp">
 
     <!-- ==== Pré-conexões (melhor LCP) ==== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <!-- ==== Fontes externas ====
-         Oswald  -> títulos (traço condensado, "estampado em metal")
-         Inter   -> texto corrido
-         IBM Plex Mono -> rótulos/etiquetas (efeito "código de série") -->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap"
+    <!-- ==== Fontes da identidade ====
+         Big Shoulders Display -> títulos (condensada, como perfil de aço)
+         IBM Plex Sans         -> texto corrido
+         IBM Plex Mono         -> rótulos e medidas -->
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap"
           rel="stylesheet">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -82,7 +85,14 @@
     <div class="container">
         <!-- LOGO -->
         <a href="#home" class="logo" aria-label="Ir para a página inicial">
-            <img src="images/logoGcastro.webp" alt="Logotipo GCASTRO ARMAÇÕES" width="480" height="320">
+            <svg class="logo-mark" viewBox="0 0 120 96" aria-hidden="true">
+                <g fill="none">
+                    <path d="M60 16V78M35 48V78M85 48V78M35 48L60 78L85 48" stroke="currentColor" stroke-width="4.5"/>
+                    <path d="M12 79L60 17L108 79" stroke="currentColor" stroke-width="9"/>
+                    <path d="M4 83H116" stroke="#E8862A" stroke-width="9"/>
+                </g>
+            </svg>
+            <span class="logo-word"><b>GCASTRO</b><small>Armações Metálicas</small></span>
         </a>
 
         <!-- BOTÃO DO MENU MOBILE -->
@@ -119,7 +129,7 @@
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <p class="eyebrow">Serralheria · Contagem e região, MG</p>
-            <h1>GCASTRO<br>ARMAÇÕES</h1>
+            <h1>GCASTRO<br><span>ARMAÇÕES</span> METÁLICAS</h1>
             <p class="hero-lead">Estrutura, proteção e acabamento em metal — coberturas, telhados,
                 toldos e portões feitos para durar.</p>
             <div class="hero-actions">
@@ -142,32 +152,32 @@
         <div class="container">
             <p class="eyebrow eyebrow-center">Portfólio</p>
             <h2>Nossos Projetos</h2>
-            <!-- TROCAR: substitua estas 3 imagens por fotos de obras reais (antes/depois, com bairro/cidade no alt) -->
-            <div class="grid-3">
-                <article class="projeto-card reveal">
-                    <div class="projeto-media">
-                        <img src="images/coberturas-com-toldo.webp"
-                             alt="Cobertura residencial com toldo"
-                             width="1344" height="768" loading="lazy">
-                    </div>
-                    <h3>Coberturas</h3>
-                </article>
-                <article class="projeto-card reveal">
-                    <div class="projeto-media">
-                        <img src="images/portao-moderno.webp"
-                             alt="Portão de design moderno"
-                             width="1344" height="768" loading="lazy">
-                    </div>
-                    <h3>Portões</h3>
-                </article>
-                <article class="projeto-card reveal">
-                    <div class="projeto-media">
-                        <img src="images/toldo-listrado.webp"
-                             alt="Toldo listrado"
-                             width="1344" height="768" loading="lazy">
-                    </div>
-                    <h3>Toldos</h3>
-                </article>
+            <p class="section-lead">Fotos de obras entregues pela GCastro.</p>
+            <div class="obras-grid">
+                <figure class="projeto-card reveal">
+                    <div class="projeto-media"><img src="images/obras/cobertura-arco.webp" alt="Cobertura em arco sobre entrada lateral de casa" width="1000" height="750" loading="lazy"></div>
+                    <figcaption><h3>Cobertura em arco</h3><span>Policarbonato e estrutura metálica</span></figcaption>
+                </figure>
+                <figure class="projeto-card reveal">
+                    <div class="projeto-media"><img src="images/obras/policarbonato-verde.webp" alt="Cobertura de policarbonato verde em área externa" width="1000" height="750" loading="lazy"></div>
+                    <figcaption><h3>Policarbonato verde</h3><span>Cobertura de área externa</span></figcaption>
+                </figure>
+                <figure class="projeto-card reveal">
+                    <div class="projeto-media"><img src="images/obras/cobertura-garagem.webp" alt="Cobertura metálica de garagem" width="1000" height="750" loading="lazy"></div>
+                    <figcaption><h3>Cobertura de garagem</h3><span>Estrutura sob medida</span></figcaption>
+                </figure>
+                <figure class="projeto-card reveal">
+                    <div class="projeto-media"><img src="images/obras/corredor-escola.webp" alt="Corredor coberto em escola" width="1000" height="750" loading="lazy"></div>
+                    <figcaption><h3>Corredor coberto</h3><span>Obra em escola</span></figcaption>
+                </figure>
+                <figure class="projeto-card reveal">
+                    <div class="projeto-media"><img src="images/obras/telhado-laje.webp" alt="Telhado metálico sobre laje" width="1000" height="750" loading="lazy"></div>
+                    <figcaption><h3>Telhado metálico</h3><span>Telhado sobre laje</span></figcaption>
+                </figure>
+                <figure class="projeto-card reveal">
+                    <div class="projeto-media"><img src="images/obras/pergolado-jardim.webp" alt="Cobertura em arco no jardim" width="1000" height="750" loading="lazy"></div>
+                    <figcaption><h3>Cobertura no jardim</h3><span>Estrutura metálica em arco</span></figcaption>
+                </figure>
             </div>
             <p class="projetos-more">
                 <a href="https://www.instagram.com/gcastro.armacoesmetalicas/" target="_blank" rel="noopener">
